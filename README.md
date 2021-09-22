@@ -1,4 +1,4 @@
-# Vite + React + Typescript + Eslint + Prettier
+# Vite + React + Typescript + Eslint + Prettier + StoryBook
 
 A starter for build React hooks library with Typescript with the fast Vite and all static code testing with Eslint and formatting with Prettier.
 
@@ -7,14 +7,14 @@ A starter for build React hooks library with Typescript with the fast Vite and a
 ## Installation
 
 ```shell
-  degit anilpixel/vite-react-ts-eslint-prettier
-  pnpm install
+  degit anilpixel/vite-react-library-boilerplate
+  yarn
 ```
 
 ## Start
 
-After the successful installation of the packages: `pnpm dev`
+After the successful installation of the packages: `yarn dev`
 
 ## Build
 
-`pnpm build`
+`yarn build`

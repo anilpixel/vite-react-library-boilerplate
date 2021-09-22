@@ -2,6 +2,7 @@ import typescript from '@rollup/plugin-typescript'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import * as path from 'path'
 import { typescriptPaths } from 'rollup-plugin-typescript-paths'
+import { visualizer } from 'rollup-plugin-visualizer'
 import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
@@ -39,10 +40,10 @@ export default defineConfig({
         typescript({
           sourceMap: false,
           declaration: true,
-          declarationMap: false,
-          outDir: 'dist',
+          outDir: 'dist/types',
           exclude: ['**/__tests__'],
         }),
+        visualizer(),
       ],
     },
   },

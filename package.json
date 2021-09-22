@@ -1,8 +1,7 @@
 {
-  "name": "vite-react-ts-eslint-prettier",
+  "name": "vite-react-library-boilerplate",
   "version": "0.1.0",
   "description": "",
-  "main": "main.js",
   "license": "MIT",
   "scripts": {
     "dev": "vite",
@@ -10,22 +9,32 @@
     "serve": "vite preview",
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
-    "lint": "yarn lint:format && yarn lint:fix "
+    "lint": "yarn lint:format && yarn lint:fix",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "react": "16 || 17",
-    "react-dom": "16 || 17"
+    "i18next": "^20.6.0",
+    "react-i18next": "^11.11.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@rollup/plugin-typescript": "^8.2.1",
+    "@storybook/addon-actions": "^6.4.0-alpha.33",
+    "@storybook/addon-essentials": "^6.4.0-alpha.33",
+    "@storybook/addon-links": "^6.4.0-alpha.33",
+    "@storybook/react": "^6.4.0-alpha.33",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@types/jest": "^27.0.2",
     "@types/node": "^15.12.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
     "@vitejs/plugin-react-refresh": "^1.3.1",
-    "autoprefixer": "^10.2.6",
+    "@welldone-software/why-did-you-render": "^6.2.1",
+    "autoprefixer": "^10.3.3",
     "babel-loader": "^8.2.2",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
@@ -35,15 +44,36 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "postcss-nested": "^5.0.5",
+    "jest": "^27.2.1",
+    "jest-transform-stub": "^2.0.0",
+    "postcss": "^8.3.6",
+    "postcss-custom-properties": "^11.0.0",
+    "postcss-nested": "^5.0.6",
     "pre-commit": "^1.2.2",
     "prettier": "^2.2.1",
+    "react": "16 || 17",
+    "react-dom": "16 || 17",
     "rollup-plugin-typescript-paths": "^1.3.0",
-    "typescript": "^4.1.2",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "storybook-builder-vite": "^0.0.12",
+    "tailwindcss": "^2.2.9",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3",
     "vite": "^2.1.0"
   },
   "pre-commit": "lint",
   "files": [
     "dist"
-  ]
+  ],
+  "keywords": [],
+  "main": "./dist/main.cjs.js",
+  "module": "./dist/main.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/main.ejs.js",
+      "require": "./dist/main.cjs.js"
+    }
+  },
+  "typings": "./dist/types/main.d.ts"
 }
